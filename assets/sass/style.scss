@@ -1,0 +1,281 @@
+@import './variables';
+@import './mixin';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    @include container;
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+    .register{
+        @include flex;
+        padding: 10px 0;
+        .icons{
+            display: flex;
+            gap: 15px;
+            i{
+                font-size: 12px;
+                color: $color1;
+            }
+        }
+        .login{
+            display: flex;
+            gap: 10px;
+            p{
+                font-family: $font-family1;
+                font-size: 12px;
+                color: $color1;
+            }
+        }
+    }
+    .security{
+        @include flex;
+        padding: 15px 0;
+        ul{
+            display: flex;
+            gap: 25px;
+            li{
+                list-style-type: none;
+                font-size: 12px;
+                font-family: $font-family1;
+                text-transform: uppercase;
+                a{
+                    text-decoration: none;
+                    color: $color1;
+                }
+            }
+        }
+    }
+}
+
+header{
+    width: 100%;
+    padding: 200px 0;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("../images/header-bg.jpg.webp");
+    background-size: cover;
+    background-position: center;
+    .head{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 15px;
+        #p1{
+            font-family: $font-family1;
+            font-size: 16px;
+            color: $color1;
+            letter-spacing: 1px;
+        }
+        #p2{
+            font-family: $font-family1;
+            font-size: 14px;
+            color: $color1;
+        }
+        h1{
+            font-family: $font-family1;
+            font-size: 48px;
+            color: $color1;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        button{
+            width: 170px;
+            height: 45px;
+            background-color: $color2;
+            border: 1px solid $color2;
+            color: $color1;
+            font-family: $font-family1;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all .4s ease;
+            margin-top: 20px;
+            &:hover{
+                background: none;
+                cursor: pointer;
+                color: $color2;
+
+            }
+        }
+    }
+}
+
+.section1{
+    width: 100%;
+    padding: 50px 0;
+    .offer{
+        @include center;
+        flex-direction: column;
+        gap: 10px;
+        h2{
+            font-family: $font-family1;
+            font-weight: bold;
+            font-size: 35px;
+        }
+        p{
+            font-family: $font-family1;
+            font-size: 13px;
+            color: $color3;
+        }
+    }
+    .basic{
+        @include flex;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        .brake{
+            width: 32%;
+            display: flex;
+            flex-direction: column;
+            transition: all .5s ease;
+            .photo{
+                width: 100%;
+                height: 45%;
+                padding: 25px;
+                img{
+                    width: 100%;
+                }
+            }
+            .lorem{
+                width: 100%;
+                height: 55%;
+                padding: 25px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                h3{
+                    font-family: $font-family1;
+                    font-size: 18px;
+                }
+                p{
+                    font-family: $font-family1;
+                    color: $color3;
+                    font-size: 14px;
+                }
+            }
+            &:hover{
+                background-color: $color2;
+            }
+        }
+    }
+}
+
+.section2{
+    width: 100%;
+    padding: 150px 0 50px 0;
+    .some{
+        @include center;
+        flex-direction: column;
+        gap: 10px;
+        h2{
+            font-family: $font-family1;
+            font-weight: bold;
+            font-size: 35px;
+        }
+        p{
+            font-family: $font-family1;
+            font-size: 13px;
+            color: $color3;
+        }
+    }
+    .expert{
+        @include flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        gap: 30px;
+        .service{
+            width: 31%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            transition: all .5s ease;
+            .person{
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                i{
+                    font-size: 20px;
+                }
+                h3{
+                    font-family: $font-family1;
+                    font-size: 18px;
+                }
+            }
+            p{
+                font-family: $font-family1;
+                color: $color3;
+                font-size: 14px;
+            }
+            &:hover{
+                background-color: $color2;
+                cursor: pointer;
+                box-shadow: -3px 4px 27px 1px rgba(130,130,130,0.75);
+                -webkit-box-shadow: -3px 4px 27px 1px rgba(130,130,130,0.75);
+                -moz-box-shadow: -3px 4px 27px 1px rgba(130,130,130,0.75);
+            }
+        }
+    }
+}
+
+.section3{
+    width: 100%;
+    padding: 150px 0 50px 0;
+    .late{
+        @include center;
+        flex-direction: column;
+        gap: 10px;
+        h2{
+            font-family: $font-family1;
+            font-weight: bold;
+            font-size: 35px;
+        }
+        p{
+            font-family: $font-family1;
+            font-size: 14px;
+            padding: 0 200px;
+            text-align: center;
+            color: $color3;
+        }
+    }
+    .jan{
+        @include flex;
+        .prob{
+            width: 24%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .img{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            .ipsum{
+                .gamb{
+                    width: 120px;
+                    height: 30px;
+                    background-color: $color4;
+                    @include center;
+                    font-family: $font-family1;
+                    color: $color3;
+                    font-size: 14px;
+                }
+            }
+            h3{
+                font-family: $font-family1;
+                font-size: 17px;
+            }
+            p{
+                font-family: $font-family1;
+                font-size: 14px;
+                color: $color3;
+            }
+        }
+    }
+}
