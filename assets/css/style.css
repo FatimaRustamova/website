@@ -83,6 +83,7 @@ nav .security img {
 }
 nav .security ul {
   display: flex;
+  align-items: center;
   gap: 30px;
 }
 nav .security ul li {
@@ -98,6 +99,17 @@ nav .security ul li a {
 }
 nav .security ul li a:hover {
   color: #fab700;
+}
+nav .security ul #add {
+  width: 50px;
+  height: 30px;
+  background-color: #fab700;
+  border: 1px solid #fab700;
+  color: white;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 nav .security i {
   display: none;
@@ -158,7 +170,7 @@ header .head button:hover {
 
 .section1 {
   width: 100%;
-  padding: 100px 0;
+  padding: 100px 0 50px 0;
 }
 .section1 .offer {
   display: flex;
@@ -517,6 +529,146 @@ footer .foot .follow .divs i {
 }
 footer .foot .follow .divs i:hover {
   color: #fab700;
+  cursor: pointer;
+}
+
+#sect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 0 50px 0;
+}
+#sect .details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sect .details .brake {
+  width: 32%;
+  padding: 10px 0 25px 0;
+  background-color: #f9f9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.5s ease;
+}
+#sect .details .brake .photo {
+  width: 100%;
+  height: 45%;
+  padding: 20px;
+}
+#sect .details .brake .photo img {
+  width: 100%;
+}
+#sect .details .brake .lorem {
+  width: 100%;
+  height: 55%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#sect .details .brake .lorem h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+#sect .details .brake .lorem p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: grey;
+  font-size: 15px;
+  line-height: 22px;
+}
+#sect .details .brake button {
+  width: 150px;
+  height: 40px;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: teal;
+  border: 1px solid teal;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+#sect .details .brake:hover {
+  background-color: #fab700;
+}
+
+#section {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#section form {
+  width: 400px;
+  padding: 30px 0;
+  border: 2px solid teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#section form #add {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#section form #add label {
+  font-family: "Poppins", sans-serif;
+}
+#section form #add input[type=text] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid white;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+#section form #add input[type=text]:focus {
+  border: 2px solid teal;
+  outline: none;
+}
+#section form #add input[type=file]::file-selector-button {
+  width: 100px;
+  height: 30px;
+  background-color: teal;
+  border: 1px solid teal;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+#section form #add input[type=submit] {
+  width: 150px;
+  height: 35px;
+  margin-top: 20px;
+  margin-left: 50px;
+  background-color: teal;
+  border: 1px solid teal;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.load {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.load #load {
+  width: 150px;
+  height: 40px;
+  border: 1px solid #fab700;
+  background-color: #fab700;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  color: white;
   cursor: pointer;
 }
 

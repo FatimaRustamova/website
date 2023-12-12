@@ -1,19 +1,22 @@
 {
-  "posts": [
+  "security": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "image": "./assets/images/s1.jpg.webp",
+      "name": "Basic & Common Repairs",
+      "description": "Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities and the appearances of the graphical."
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "image": "./assets/images/s2.jpg.webp",
+      "name": "Basic & Common Repairs",
+      "description": "Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities and the appearances of the graphical."
+    },
+    {
+      "id": 3,
+      "image": "./assets/images/s3.jpg.webp",
+      "name": "Brake Repairs & Services",
+      "description": "Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities and the appearances of the graphical."
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
