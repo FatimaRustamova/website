@@ -91,6 +91,7 @@ nav .security ul li {
   font-size: 12px;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
+  position: relative;
 }
 nav .security ul li a {
   text-decoration: none;
@@ -99,6 +100,35 @@ nav .security ul li a {
 }
 nav .security ul li a:hover {
   color: #fab700;
+}
+nav .security ul li .drop {
+  width: 200px;
+  height: 35px;
+  display: none;
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+nav .security ul li .drop ul {
+  padding: 15px 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  align-items: flex-start;
+}
+nav .security ul li .drop ul li {
+  list-style-type: none;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  padding-left: 20px;
+  transition: all 0.4s ease;
+}
+nav .security ul li .drop ul li:hover {
+  color: #fab700;
+  cursor: pointer;
 }
 nav .security ul #add {
   width: 50px;
@@ -115,6 +145,51 @@ nav .security i {
   display: none;
   font-size: 30px;
   color: white;
+  cursor: pointer;
+}
+
+.list-modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  display: none;
+}
+.list-modal .modal {
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.list-modal .modal ul {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0 0 20px;
+  gap: 25px;
+}
+.list-modal .modal ul li {
+  list-style-type: none;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.list-modal .modal ul li a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.4s ease;
+}
+.list-modal .modal ul li a:hover {
+  color: #fab700;
+}
+.list-modal i {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
 }
 
 header {
@@ -599,10 +674,17 @@ footer .foot .follow .divs i:hover {
 
 #section {
   width: 100%;
-  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+#section h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  color: brown;
+  font-size: 30px;
 }
 #section form {
   width: 400px;
@@ -611,8 +693,10 @@ footer .foot .follow .divs i:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
 }
 #section form #add {
+  width: 75%;
   padding: 10px 0;
   display: flex;
   flex-direction: column;
@@ -632,6 +716,16 @@ footer .foot .follow .divs i:hover {
 #section form #add input[type=text]:focus {
   border: 2px solid teal;
   outline: none;
+}
+#section form #add input[type=file]::-webkit-file-upload-button {
+  width: 100px;
+  height: 30px;
+  background-color: teal;
+  border: 1px solid teal;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
 }
 #section form #add input[type=file]::file-selector-button {
   width: 100px;

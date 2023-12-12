@@ -84,12 +84,42 @@ nav{
                 font-size: 12px;
                 font-family: $font-family1;
                 text-transform: uppercase;
+                position: relative;
                 a{
                     text-decoration: none;
                     color: $color1;
                     transition: all .4s ease;
                     &:hover{
                         color: $color2;
+                    }
+                }
+                .drop{
+                    width: 200px;
+                    height: 35px;
+                    display: none;
+                    transition: all .4s ease;
+                    position: absolute;
+                    top: 50px;
+                    left: 10px;
+                    ul{
+                        padding: 15px 0;
+                        background-color: $color1;
+                        display: flex;
+                        flex-direction: column;
+                        transition: all .4s ease;
+                        align-items: flex-start;
+                        li{
+                            list-style-type: none;
+                            font-size: 12px;
+                            font-family: $font-family1;
+                            text-transform: uppercase; 
+                            padding-left: 20px;
+                            transition: all .4s ease;
+                            &:hover{
+                                color: $color2;
+                                cursor: pointer;
+                            }       
+                        }
                     }
                 }
             }
@@ -109,7 +139,52 @@ nav{
             display: none;
             font-size: 30px;
             color: $color1;
+            cursor: pointer;
         }
+    }
+}
+
+.list-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    display: none;
+    .modal{
+        width: 250px;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        ul{
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0 0 20px;
+            gap: 25px;
+            li{
+                list-style-type: none;
+                font-size: 13px;
+                font-family: $font-family1;
+                text-transform: uppercase;
+                font-weight: bold;
+                a{
+                    text-decoration: none;
+                    color: $color1;
+                    transition: all .4s ease;
+                    &:hover{
+                        color: $color2;
+                    }
+                }
+            }
+        }
+    }
+    i{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: $color1;
+        font-size: 25px;
+        cursor: pointer;
     }
 }
 
@@ -569,14 +644,23 @@ footer{
 
 #section{
     width: 100%;
-    margin-top: 50px;
     @include center;
+    flex-direction: column;
+    h1{
+        font-family: $font-family1;
+        text-align: center;
+        margin-top: 50px;
+        color: brown;
+        font-size: 30px;
+    }
     form{
         width: 400px;
         padding: 30px 0;
         border: 2px solid teal;
         @include center;
+        margin-top: 50px;
         #add{
+            width: 75%;
             padding: 10px 0;
             display: flex;
             flex-direction: column;
@@ -593,7 +677,7 @@ footer{
                 font-size: 16px;
             }
             input[type=text]:focus{
-                border:2px solid teal;
+                border: 2px solid teal;
                 outline: none;
             }
             input[type=file]::file-selector-button{

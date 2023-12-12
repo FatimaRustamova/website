@@ -31,7 +31,7 @@ fetch("http://localhost:3000/security")
     </div>
     <button onclick="goTo(${element.id})">View Details</button>
     <button onclick="deleteDiv(${element.id})">Delete</button>
-    <button id="update">Update</button>
+    <button onclick="updateDiv(${element.id})">Update</button>
         </div>
         `
     })
@@ -43,9 +43,43 @@ function goTo(id){
 
 function deleteDiv(id){
     axios.delete(`http://localhost:3000/security/${id}`);
-    window.location.reload()
+    window.location.reload();
+}
+
+function updateDiv(id) {
+    window.location = `./update.html?id=${id}`;
 }
 
 add.addEventListener("click", ()=>{
-    window.location = "./add.html"
+    window.location = "./add.html";
 })
+
+let list = document.querySelector("#list");
+let modal = document.querySelector(".list-modal");
+let lg = document.querySelector("#lg");
+
+list.addEventListener("click", ()=>{
+    list.style.display = "none";
+    modal.style.display = "flex";
+})
+
+modal.addEventListener("click", (e)=>{
+    if(e.target == modal){
+        modal.style.display = "";
+        list.style.display = "";
+    }
+})
+
+lg.addEventListener("click", ()=>{
+    modal.style.display = "";
+    list.style.display = "";
+})
+
+let dropdown = document.querySelector(".drop");
+let page = document.querySelector("#page");
+
+
+// setTimeout(
+//     page.addEventListener("mouseover", ()=>{
+//         dropdown.style.display = "block";
+//     }), 3000);
