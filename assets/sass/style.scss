@@ -264,15 +264,17 @@ header{
         flex-wrap: wrap;
         .brake{
             width: 32%;
-            padding: 10px 0 25px 0;
+            padding: 20px 0 25px 0;
             background-color: $color5;
             @include center;
             flex-direction: column;
             transition: all .5s ease;
+            position: relative;
             i{
-                position: relative;
+                position: absolute;
                 top: 10px;
-                right: 10px;
+                right: 20px;
+                font-size: 20px;
             }
             .photo{
                 width: 100%;
@@ -712,9 +714,18 @@ footer{
 
 #favor{
     @include center;
-    padding: 150px 0 50px 0;
+    flex-direction: column;
+    padding: 50px 0 50px 0;
+    h1{
+        text-align: center;
+        color: $color2;
+        font-size: 35px;
+        font-family: $font-family1;
+        padding-bottom: 30px;
+    }
     .favorites{
         @include center;
+        flex-wrap: wrap;
         .brake{
             width: 32%;
             padding: 10px 0 25px 0;

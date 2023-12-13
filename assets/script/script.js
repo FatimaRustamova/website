@@ -1,22 +1,10 @@
 let nav = document.querySelector("nav");
 let load = document.querySelector("#load");
-let page = 1;
-
-window.addEventListener("scroll", ()=>{
-    if(window.scrollY>100){
-        nav.style.backgroundColor = "rgba(0,0,0,0.8)";
-        nav.style.top = "0";
-        nav.style.left = "0";
-        nav.style.transition = "all .5s ease";
-    }
-    else{
-        nav.style.backgroundColor = "";
-        nav.style.transition = "all .5s ease";
-    }
-})
-
 let security = document.querySelector(".basic");
 let add = document.querySelector("#add");
+let dropdown = document.querySelector(".drop");
+let more = document.querySelector(".more")
+let page = 1;
 
 function getData() {
     fetch(`http://localhost:3000/security?_page=${page}&_limit=3`)
@@ -42,6 +30,7 @@ function getData() {
     })
 }
  
+getData();
 
 load.addEventListener("click", ()=>{
     if(event.target.innerText == "Load More"){
@@ -74,6 +63,31 @@ add.addEventListener("click", ()=>{
     window.location = "./add.html";
 })
 
+function favorite(id){
+    axios.get("http://localhost:3000/security/"+id)
+    .then(res => {
+        console.log(res.data);
+        axios.post("http://localhost:3000/favorites", res.data);
+    })
+}
+
+//---Scroll---
+
+window.addEventListener("scroll", ()=>{
+    if(window.scrollY>100){
+        nav.style.backgroundColor = "rgba(0,0,0,0.8)";
+        nav.style.top = "0";
+        nav.style.left = "0";
+        nav.style.transition = "all .5s ease";
+    }
+    else{
+        nav.style.backgroundColor = "";
+        nav.style.transition = "all .5s ease";
+    }
+})
+
+//---Modal---
+
 let list = document.querySelector("#list");
 let modal = document.querySelector(".list-modal");
 let lg = document.querySelector("#lg");
@@ -95,24 +109,9 @@ lg.addEventListener("click", ()=>{
     list.style.display = "";
 })
 
-let dropdown = document.querySelector(".drop");
-let more = document.querySelector(".more")
+
 
 // setTimeout(
 //     more.addEventListener("mouseover", ()=>{
 //         dropdown.style.display = "block";
 //     }), 3000);
-
-function favorite(id){
-    axios.get("http://localhost:3000/security/"+id)
-    .then(res => {
-        console.log(res.data);
-        axios.post("http://localhost:3000/favorites", res.data);
-    })
-}
-
-let favorites = document.querySelector("#favorites");
-
-favorites.addEventListener("click", ()=>{
-    window.location = `./favorites.html?id=${id}`
-})

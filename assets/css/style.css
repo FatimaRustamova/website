@@ -273,18 +273,20 @@ header .head button:hover {
 }
 .section1 .basic .brake {
   width: 32%;
-  padding: 10px 0 25px 0;
+  padding: 20px 0 25px 0;
   background-color: #f9f9ff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   transition: all 0.5s ease;
+  position: relative;
 }
 .section1 .basic .brake i {
-  position: relative;
+  position: absolute;
   top: 10px;
-  right: 10px;
+  right: 20px;
+  font-size: 20px;
 }
 .section1 .basic .brake .photo {
   width: 100%;
@@ -705,6 +707,16 @@ footer .foot .follow .divs i:hover {
   border: 2px solid teal;
   outline: none;
 }
+#section form #add input[type=file]::-webkit-file-upload-button {
+  width: 100px;
+  height: 30px;
+  background-color: teal;
+  border: 1px solid teal;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
 #section form #add input[type=file]::file-selector-button {
   width: 100px;
   height: 30px;
@@ -748,12 +760,21 @@ footer .foot .follow .divs i:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 150px 0 50px 0;
+  flex-direction: column;
+  padding: 50px 0 50px 0;
+}
+#favor h1 {
+  text-align: center;
+  color: #fab700;
+  font-size: 35px;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 30px;
 }
 #favor .favorites {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 #favor .favorites .brake {
   width: 32%;
