@@ -1,4 +1,6 @@
 let nav = document.querySelector("nav");
+let load = document.querySelector("#load");
+let page = 1;
 
 window.addEventListener("scroll", ()=>{
     if(window.scrollY>100){
@@ -16,25 +18,43 @@ window.addEventListener("scroll", ()=>{
 let security = document.querySelector(".basic");
 let add = document.querySelector("#add");
 
-fetch("http://localhost:3000/security")
-.then(res => res.json())
-.then(data => {
-    data.forEach(element => {
-        security.innerHTML += `
-        <div class="brake">
-        <div class="photo">
-        <img src="${element.image}" alt="">
-    </div>
-    <div class="lorem">
-        <h3>${element.name}</h3>
-        <p>${element.description}</p>
-    </div>
-    <button onclick="goTo(${element.id})">View Details</button>
-    <button onclick="deleteDiv(${element.id})">Delete</button>
-    <button onclick="updateDiv(${element.id})">Update</button>
-        </div>
-        `
+function getData() {
+    fetch(`http://localhost:3000/security?_page=${page}&_limit=3`)
+    .then(res => res.json())
+    .then(data => {
+        data.forEach(element => {
+            security.innerHTML += `
+            <div class="brake">
+                <i class="bi bi-heart" onclick="favorite(${element.id})"></i>
+                <div class="photo">
+                    <img src="${element.image}" alt="">
+                </div>
+                <div class="lorem">
+                    <h3>${element.name}</h3>
+                    <p>${element.description}</p>
+                </div>
+                <button onclick="goTo(${element.id})">View Details</button>
+                <button onclick="deleteDiv(${element.id})">Delete</button>
+                <button onclick="updateDiv(${element.id})">Update</button>
+                </div>
+            `
+        })
     })
+}
+ 
+
+load.addEventListener("click", ()=>{
+    if(event.target.innerText == "Load More"){
+        page++;
+        getData();
+        event.target.innerText = "Less More";
+    }
+    else{
+        event.target.innerText = "Load More";
+        security.innerHTML = "";
+        page--;
+        getData()
+    }
 })
 
 function goTo(id){
@@ -76,10 +96,23 @@ lg.addEventListener("click", ()=>{
 })
 
 let dropdown = document.querySelector(".drop");
-let page = document.querySelector("#page");
-
+let more = document.querySelector(".more")
 
 // setTimeout(
-//     page.addEventListener("mouseover", ()=>{
+//     more.addEventListener("mouseover", ()=>{
 //         dropdown.style.display = "block";
 //     }), 3000);
+
+function favorite(id){
+    axios.get("http://localhost:3000/security/"+id)
+    .then(res => {
+        console.log(res.data);
+        axios.post("http://localhost:3000/favorites", res.data);
+    })
+}
+
+let favorites = document.querySelector("#favorites");
+
+favorites.addEventListener("click", ()=>{
+    window.location = `./favorites.html?id=${id}`
+})
